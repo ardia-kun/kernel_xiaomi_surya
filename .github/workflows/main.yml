@@ -6,7 +6,7 @@ on:
       kernel_name:
         description: "Kernel Name"
         required: true
-        default: "MIUI-A10-NOS"
+        default: "MIUI-A10-LOS"
       defconfig:
         description: "Defconfig"
         required: true
@@ -156,7 +156,7 @@ jobs:
             OBJDUMP=llvm-objdump \
             STRIP=llvm-strip \
             LLVM=1 LLVM_IAS=1 \
-            KCFLAGS="-Wno-error -Wno-frame-larger-than=2048" \
+            KCFLAGS="-Wno-error" \
             KBUILD_VERBOSE=2 V=1 \
             Image.gz-dtb | tee log.txt
 
