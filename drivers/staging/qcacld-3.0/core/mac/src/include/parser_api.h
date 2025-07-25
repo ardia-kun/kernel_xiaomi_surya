@@ -1119,8 +1119,9 @@ QDF_STATUS populate_dot11f_rrm_ie(tpAniSirGlobal pMac,
 				tDot11fIERRMEnabledCap *pDot11f,
 				tpPESession psessionEntry);
 
-void populate_mdie(tpAniSirGlobal pMac, tDot11fIEMobilityDomain * pDot11f,
-		   uint8_t mdie[]);
+void populate_mdie(tpAniSirGlobal pMac,
+                   tDot11fIEMobilityDomain *pDot11f,
+                   uint8_t *mdie);
 
 #ifdef WLAN_FEATURE_FILS_SK
 /**
