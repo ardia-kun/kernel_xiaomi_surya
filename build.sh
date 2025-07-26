@@ -196,4 +196,7 @@ compile_kernel
 build_dtb_dtbo
 package_anykernel
 
+# Jika build sampai tahap ini (sukses), hapus log
+rm -f "$LOGFILE"
+
 echo "==> Build finished in $(( $(date +%s) - BUILD_START )) seconds."
