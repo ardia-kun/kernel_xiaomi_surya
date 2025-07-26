@@ -123,8 +123,18 @@ all.config
 # Kdevelop4
 *.kdev4
 
-# fetched Android config fragments
+# Android config fragments
 kernel/configs/android-*.cfg
+
+# Build output directory
 out/
+
+# Patch leftovers
 *.old
 *.rej
+
+# Logs
+log.txt
+
+# Specific defconfig
+surya_defconfig
