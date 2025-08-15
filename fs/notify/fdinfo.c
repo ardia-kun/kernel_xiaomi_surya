@@ -17,10 +17,6 @@
 #include <linux/susfs_def.h>
 #endif
 
-
-/* Forward declaration to fix incomplete type error */
-void show_mark_fhandle(struct seq_file *m, struct inode *inode);
-
 #include "inotify/inotify.h"
 #include "../fs/mount.h"
 
@@ -123,7 +119,7 @@ static void inotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark)
 			}
 			seq_printf(m, "inotify wd:%x ino:%lx sdev:%x mask:%x ignored_mask:0 ",
 			   inode_mark->wd, path.dentry->d_inode->i_ino, path.dentry->d_inode->i_sb->s_dev,
-			show_mark_fhandle(m, path.dentry->d_inode));
+			void show_mark_fhandle(struct seq_file *m, struct inode *inode);
 			seq_putc(m, '\n');
 			iput(inode);
 			path_put(&path);
