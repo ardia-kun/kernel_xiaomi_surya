@@ -84,8 +84,6 @@ static void show_mark_fhandle(struct seq_file *m, struct inode *inode)
 }
 #endif
 
-#ifdef CONFIG_INOTIFY_USER
-
 #ifdef CONFIG_KSU_SUSFS_SUS_MOUNT
 static void inotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark, struct file *file)
 #else
@@ -131,13 +129,6 @@ out_free_pathname:
 		}
 out_seq_printf:
 #endif
-
-void inotify_show_fdinfo(struct seq_file *m, struct file *f)
-{
-	show_fdinfo(m, f, inotify_fdinfo);
-}
-
-#endif /* CONFIG_INOTIFY_USER */
 
 #ifdef CONFIG_FANOTIFY
 
