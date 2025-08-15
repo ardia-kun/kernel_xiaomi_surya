@@ -17,6 +17,10 @@
 #include <linux/susfs_def.h>
 #endif
 
+
+/* Forward declaration to fix incomplete type error */
+void show_mark_fhandle(struct seq_file *m, struct inode *inode);
+
 #include "inotify/inotify.h"
 #include "../fs/mount.h"
 
