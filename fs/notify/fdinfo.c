@@ -20,6 +20,10 @@
 #include "inotify/inotify.h"
 #include "../fs/mount.h"
 
+#ifdef CONFIG_INOTIFY_USER
+extern u32 inotify_mark_user_mask(const struct fsnotify_mark *mark);
+#endif
+
 #if defined(CONFIG_PROC_FS)
 
 #if defined(CONFIG_INOTIFY_USER) || defined(CONFIG_FANOTIFY)
