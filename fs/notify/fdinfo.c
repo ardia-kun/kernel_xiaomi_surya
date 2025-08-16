@@ -21,7 +21,7 @@
 #include "../fs/mount.h"
 
 #ifdef CONFIG_INOTIFY_USER
-extern u32 inotify_mark_user_mask(const struct fsnotify_mark *mark);
+extern u32 fsnotify_mark_user_mask(const struct fsnotify_mark *mark);
 #endif
 
 #if defined(CONFIG_PROC_FS)
@@ -123,7 +123,7 @@ static void inotify_fdinfo(struct seq_file *m, struct fsnotify_mark *mark)
 			}
 			seq_printf(m, "inotify wd:%x ino:%lx sdev:%x mask:%x ignored_mask:0 ",
 			   inode_mark->wd, path.dentry->d_inode->i_ino, path.dentry->d_inode->i_sb->s_dev,
-			   inotify_mark_user_mask(mark));
+			   fsnotify_mark_user_mask(mark));
 			show_mark_fhandle(m, path.dentry->d_inode);
 			seq_putc(m, '\n');
 			iput(inode);
@@ -137,7 +137,7 @@ out_seq_printf:
 #endif
 		seq_printf(m, "inotify wd:%x ino:%lx sdev:%x mask:%x ignored_mask:0 ",
 			   inode_mark->wd, inode->i_ino, inode->i_sb->s_dev,
-			   inotify_mark_user_mask(mark));
+			   fsnotify_mark_user_mask(mark));
 		show_mark_fhandle(m, inode);
 		seq_putc(m, '\n');
 		iput(inode);
